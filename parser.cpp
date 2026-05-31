@@ -10,6 +10,11 @@ std::unique_ptr<RanPacket> parseLine(std::string_view line) {
 	std::string_view 			error_chunk;
 	std::optional<std::string>	final_error = std::nullopt;
 	
+	if (line.empty()) return (nullptr);
+
+	size_t pipes = std::count(line.begin(), line.end(), '|');
+    if (pipes < 2) return nullptr;
+
 	pipe_pos = line.find('|');
 	timestamp_chunk = line.substr(0, pipe_pos);
 

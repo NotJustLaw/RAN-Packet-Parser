@@ -7,6 +7,7 @@
 #include <optional>
 #include <utility>
 #include <vector>
+#include <algorithm>
 
 class RanPacket {
 	private:
