@@ -1,7 +1,7 @@
 #include "inc/packet.hpp"
 
 int main(){
-	//Format: TIMESTAMP | ID | PAYLOAD (Hex) | ERROR_CODE (Optional)
+	//Format: TIMESTAMP | ID | PAYLOAD (Hex) | ERROR_CODE
 	std::vector<std::string> raw_logs = {
         "16200123|PKT_001|A1B2C3D4E5",           // Healthy
         "16200124|PKT_X02|FF998877",             // Corrupetd ID
