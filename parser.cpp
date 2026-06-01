@@ -38,7 +38,14 @@ std::unique_ptr<RanPacket> parseLine(std::string_view line) {
     }
 
 	try {
-   		parsed_ptr = std::make_unique<RanPacket>(std::stoull(std::string(timestamp_chunk)), std::string(id_chunk), std::string(payload_chunk), std::move(final_error));
+		size_t pos;
+		unsigned long long timestamp = std::stoull(std::string(timestamp_chunk), &pos);
+    
+		if (pos != timestamp_chunk.length()) {
+			throw std::invalid_argument("Incomplete numeric parse");
+		}
+
+   		parsed_ptr = std::make_unique<RanPacket>(timestamp, std::string(id_chunk), std::string(payload_chunk), std::move(final_error));
 	} catch (const std::exception& e) {
     	std::cerr << "Critic error trying to parse line: " << e.what() << "\n";
    		return (nullptr);

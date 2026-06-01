@@ -20,7 +20,7 @@ class RanPacket {
 
 	bool 				hasError() const {bool result = (ERROR != std::nullopt) ? true : false; return (result);};
 	std::string_view	getId() const {return (std::string_view(ID));};
-	std::string	getError() const {return ERROR.value_or("NONE");};
+	std::string			getError() const {return ERROR.value_or("NONE");};
 };
 
 std::unique_ptr<RanPacket> parseLine(std::string_view line);

@@ -1,7 +1,7 @@
 NAME = ran_parser
 
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++17 -Iinc
+CXXFLAGS = -Wall -Wextra -Werror -std=c++17 -Iinc -g
 
 SRCS = main.cpp parser.cpp
 OBJS = $(SRCS:.cpp=.o)
