@@ -3,10 +3,10 @@
 int main(){
 	//Format: TIMESTAMP | ID | PAYLOAD (Hex) | ERROR_CODE
 	std::vector<std::string> raw_logs = {
-        "16200123|PKT_001|A1B2C3D4E5",           // Healthy
-        "16200124|PKT_X02|FF998877",             // Corrupetd ID
-        "16200125|PKT_003|112233|ERR_TIMEOUT",   // Error
-        "16200a126|PKT_004|999999"                // Healthy
+        "16200123|PKT_001|A1B2C3D4E5",          	// Healthy
+        "16200124|PKT_X02|FF998877",            	// Corrupetd ID
+        "16200125|PKT_003|112233|ERR_TIMEOUT",   	// Error
+        "16200a126|PKT_004|999999"                	// Healthy
     };
 
 	std::vector<std::unique_ptr<RanPacket>> valid_queue;

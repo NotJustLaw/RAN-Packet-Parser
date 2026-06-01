@@ -2,8 +2,8 @@
 
 std::unique_ptr<RanPacket> parseLine(std::string_view line) {
 	std::unique_ptr<RanPacket>	parsed_ptr;
-	size_t						pipe_pos;
 	size_t						start_pos;
+	size_t						pipe_pos;
 	std::string_view 			timestamp_chunk;
 	std::string_view 			id_chunk;
 	std::string_view 			payload_chunk;
